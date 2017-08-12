@@ -15,11 +15,18 @@ if code_choice in ("encode", "Encode", "Encrypt", "encrypt"):
         print("Please enter a supported language")
         language_choice=input("Choose which language to encode to: English or Mandarin?")
 
-#encode to Mandarin
+#encode
 if code_choice in ("encode", "Encode", "Encrypt", "encrypt"):
     encoded_msg = encrypt(language_choice,user_str)
-    print("Encoded message = " + encoded_msg)
+    if encoded_msg != None:
+        print("Encoded message = " + encoded_msg)
+    else:
+        print("Could not encrypt those values")
 
 #decode
 if code_choice in ("Decode", "decode", "Decrypt", "decrypt"):
-    print("Decoded message = " + decrypt(user_str))
+    decoded_msg = decrypt(user_str)
+    if decoded_msg != None:
+        print("Decoded message = " + decoded_msg)
+    else:
+        print("Could not decode those values")
