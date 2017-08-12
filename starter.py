@@ -4,7 +4,7 @@ from decryption import decrypt
 #input
 user_str=input("Please enter a string:")
 code_choice=input("Do you want to Encode or Decode?")
-while code_choice not in ("encode", "Encode", "Encrypt", "encrypt", "Decode", "Decode", "Decrypt", "decrypt"):
+while code_choice not in ("encode", "Encode", "Encrypt", "encrypt", "decode", "Decode", "Decrypt", "decrypt"):
     print("Please tell me if you want to Encode or Decode")
     code_choice = input("Do you want to Encode or Decode?")
 
