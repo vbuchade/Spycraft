@@ -7,13 +7,13 @@ import sys
 # what-ever matches replace by v(value)
 def decrypt(msg):
     if msg == "" or msg is None:
-        print("Empty / Null encoded input. Nothing to do here.")
+        print("Error: Empty / Null encoded input. Nothing to do here.")
         return ""
 
     lang = findLanguage(msg)
 
     if lang == None:
-        print("Did not find a valid language to decrypt with.")
+        print("Error: Did not find a valid language to decrypt with.")
         return None
 
     dictionary = dictionary_builder(lang)
