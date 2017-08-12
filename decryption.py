@@ -1,7 +1,7 @@
-from dictionary_builder import encoder_dict as encoder
+from dictionary_builder import dictionary_builder
 import sys
-
-decoder = dict((v, k) for k, v in encoder.items())
+dictionary=dictionary_builder("English")
+decoder = dict((v, k) for k, v in dictionary.items())
 
 
 # check if any k(key) from decoder matches to anything in encoded_msg
