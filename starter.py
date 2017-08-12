@@ -2,14 +2,10 @@ from encryption import encrypt
 from decryption import decrypt
 
 #input
-msg = "B AC"
-# sample english input : "B CFC D ##4 ~ CE"
-# sample japanese input : "〷"
-#input("Original message to encrypt")
-print("Original message = " + msg)
+user_str=input("Please enter a string:")
 
 #encode
-encoded_msg = encrypt(msg)
+encoded_msg = encrypt(user_str)
 print("Encoded message = " + encoded_msg)
 
 #decode
