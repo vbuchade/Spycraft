@@ -1,14 +1,13 @@
 from dictionary_builder import dictionary_builder
 import os
+import sys
 
-def validate_dictionary_substring_rules():
-    appended_vals = ""
+def validate_dictionary_substring_rules(lang):
 
     # Get rid of keys from encoder_dictionary.
     # Append all values as "one big string"
-    encoder_dict = dictionary_builder("english")
-    for v in encoder_dict.values():
-        appended_vals += v
+    dictionary = dictionary_builder(lang)
+    appended_vals = getValueAsString(dictionary)
 
     # Find length of all values appended together
     vals_len = len(appended_vals)
@@ -16,7 +15,7 @@ def validate_dictionary_substring_rules():
     # For each value-v in encoder_dictionary check that "one big string" of all values does not have more than 1 occurrence of v
     # Length_of_one_big_string_of_all_values_in_dictionary == length_of_value-v + length_of_string_found_after_replace-all_of_v_from_one_big_string
     repeated_substrings = []
-    for v in encoder_dict.values():
+    for v in dictionary.values():
         removed_sub_str = appended_vals.replace(v,"")
         if(len(removed_sub_str)+len(v) == vals_len): # Value v is not present as substring in any other values used.
             continue
@@ -57,4 +56,12 @@ def findLanguage(encoded_str):
         if foundFlag:
             print("Language = " + lang)
             return lang
+
     return None
+
+    print("Did not find a language to decode this")
+    return None
+
+if __name__ == "__main__":
+    validate_dictionary_substring_rules(sys.argv[1])
+
