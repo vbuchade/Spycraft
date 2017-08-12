@@ -59,9 +59,6 @@ def findLanguage(encoded_str):
 
     return None
 
-    print("Did not find a language to decode this")
-    return None
-
 if __name__ == "__main__":
     validate_dictionary_substring_rules(sys.argv[1])
 
