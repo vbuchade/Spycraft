@@ -2,7 +2,9 @@ from encryption import encrypt
 from decryption import decrypt
 
 #input
-msg = "B AC" # sample english input : "B CFC D ##4 ~ CE"
+msg = "B AC"
+# sample english input : "B CFC D ##4 ~ CE"
+# sample japanese input : "〷"
 #input("Original message to encrypt")
 print("Original message = " + msg)
 
