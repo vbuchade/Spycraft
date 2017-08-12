@@ -1,6 +1,9 @@
+#http://www.rikai.com/library/kanjitables/kanji_codes.unicode.shtml
+
+
 lang = "english"
 # lang = "japanese"
-dict_name = lang + "_dictionary"
+dict_name = lang + "_dictionary.txt"
 file = open(dict_name, "r", -1, "UTF-8")
 lines = file.readlines()
 cleanedLines = []
