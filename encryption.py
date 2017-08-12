@@ -1,11 +1,9 @@
 from dictionary_builder import encoder_dict as encoder
 
-user_str=input("please enter a string:")
-list1=list(user_str)
-list2=[[]]*len(list1)
-
-def encrypt(str):
+def encrypt(user_str):
+    list1 = list(user_str)
+    print(list1)
+    list2 = [[]] * len(list1)
     for i in range (0, len(list1)):
         list2[i]=(encoder[list1[i]])
-encrypt(str=user_str)
-print(''.join(list2))
+    return ''.join(list2)
