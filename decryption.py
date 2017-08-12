@@ -1,17 +1,25 @@
 from dictionary_builder import dictionary_builder
+from utilities import findLanguage
 import sys
-dictionary=dictionary_builder("English")
-decoder = dict((v, k) for k, v in dictionary.items())
 
 
 # check if any k(key) from decoder matches to anything in encoded_msg
 # what-ever matches replace by v(value)
-def decrypt(encoded_msg):
-    if encoded_msg == "" or encoded_msg is None:
+def decrypt(msg):
+    if msg == "" or msg is None:
         print("Empty / Null encoded input. Nothing to do here.")
         return ""
 
-    decoded_msg = encoded_msg
+    lang = findLanguage(msg)
+
+    if lang == None:
+        print("Did not find a valid language to decrypt with.")
+        return None
+
+    dictionary = dictionary_builder(lang)
+    decoder = dict((v, k) for k, v in dictionary.items())
+
+    decoded_msg = msg
 
     for k, v in decoder.items():
         # print(" k = " + k + " v = " + v)
