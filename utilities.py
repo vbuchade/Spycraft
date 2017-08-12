@@ -57,6 +57,4 @@ def findLanguage(encoded_str):
         if foundFlag:
             print("Language = " + lang)
             return lang
-
-    print("Did not find a language to decode this")
     return None
